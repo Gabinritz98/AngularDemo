@@ -9,7 +9,7 @@ export class PlayerData implements InMemoryDbService {
         let selectedPlayers: IPlayer[] = [{
             'id': 1,
             "playerName": "Jean claude",
-            "playerPosition": "CB",
+            "playerPosition": "",
             "playerAge": 23,
             "playerNation": "France",
             "playerClub": "Barcelona",
@@ -20,7 +20,7 @@ export class PlayerData implements InMemoryDbService {
             {
                 "id": 1,
                 "playerName": "Lloris",
-                "playerPosition": "GK",
+                "playerPosition": "Goalkeeper",
                 "playerAge": 29,
                 "playerNation": "France",
                 "playerClub": "Spurs",
@@ -29,7 +29,7 @@ export class PlayerData implements InMemoryDbService {
             {
                 'id': 2,
                 "playerName": "De Gea",
-                "playerPosition": "GK",
+                "playerPosition": "Goalkeeper",
                 "playerAge": 26,
                 "playerNation": "Spain",
                 "playerClub": "Man U",
@@ -38,7 +38,7 @@ export class PlayerData implements InMemoryDbService {
             {
                 'id': 3,
                 "playerName": "Buffon",
-                "playerPosition": "GK",
+                "playerPosition": "Goalkeeper",
                 "playerAge": 37,
                 "playerNation": "Italy",
                 "playerClub": "Juve",
@@ -47,7 +47,7 @@ export class PlayerData implements InMemoryDbService {
             {
                 'id': 4,
                 "playerName": "Alisson",
-                "playerPosition": "GK",
+                "playerPosition": "Goalkeeper",
                 "playerAge": 25,
                 "playerNation": "Brazil",
                 "playerClub": "Roma",
@@ -56,7 +56,7 @@ export class PlayerData implements InMemoryDbService {
             {
                 'id': 5,
                 "playerName": "Sidibe",
-                "playerPosition": "RB",
+                "playerPosition": "Defender",
                 "playerAge": 24,
                 "playerNation": "France",
                 "playerClub": "Monaco",
@@ -65,7 +65,7 @@ export class PlayerData implements InMemoryDbService {
             {
                 'id': 6,
                 "playerName": "Carvajal",
-                "playerPosition": "RB",
+                "playerPosition": "Defender",
                 "playerAge": 27,
                 "playerNation": "Spain",
                 "playerClub": "R Madrid",
@@ -74,7 +74,7 @@ export class PlayerData implements InMemoryDbService {
             {
                 'id': 7,
                 "playerName": "Darmian",
-                "playerPosition": "RB",
+                "playerPosition": "Defender",
                 "playerAge": 24,
                 "playerNation": "Italy",
                 "playerClub": "Man U",
@@ -83,7 +83,7 @@ export class PlayerData implements InMemoryDbService {
             {
                 'id': 8,
                 "playerName": "Dani Alves",
-                "playerPosition": "RB",
+                "playerPosition": "Defender",
                 "playerAge": 31,
                 "playerNation": "Brazil",
                 "playerClub": "PSG",
@@ -92,7 +92,7 @@ export class PlayerData implements InMemoryDbService {
             {
                 'id': 9,
                 "playerName": "Umtiti",
-                "playerPosition": "CB",
+                "playerPosition": "Defender",
                 "playerAge": 23,
                 "playerNation": "France",
                 "playerClub": "Barcelona",
@@ -101,7 +101,7 @@ export class PlayerData implements InMemoryDbService {
             {
                 'id': 10,
                 "playerName": "Ramos",
-                "playerPosition": "CB",
+                "playerPosition": "Defender",
                 "playerAge": 30,
                 "playerNation": "Spain",
                 "playerClub": "R Madrid",
@@ -110,7 +110,7 @@ export class PlayerData implements InMemoryDbService {
             {
                 'id': 11,
                 "playerName": "Bonucci",
-                "playerPosition": "CB",
+                "playerPosition": "Defender",
                 "playerAge": 30,
                 "playerNation": "Italy",
                 "playerClub": "AC Milan",
@@ -119,7 +119,7 @@ export class PlayerData implements InMemoryDbService {
             {
                 'id': 12,
                 "playerName": "Silva",
-                "playerPosition": "CB",
+                "playerPosition": "Defender",
                 "playerAge": 30,
                 "playerNation": "Brazil",
                 "playerClub": "PSG",
@@ -128,7 +128,7 @@ export class PlayerData implements InMemoryDbService {
             {
                 'id': 13,
                 "playerName": "Mendy",
-                "playerPosition": "LB",
+                "playerPosition": "Defender",
                 "playerAge": 23,
                 "playerNation": "France",
                 "playerClub": "Man C",
@@ -137,7 +137,7 @@ export class PlayerData implements InMemoryDbService {
             {
                 'id': 14,
                 "playerName": "Alba",
-                "playerPosition": "LB",
+                "playerPosition": "Defender",
                 "playerAge": 25,
                 "playerNation": "Spain",
                 "playerClub": "Barcelona",
@@ -146,7 +146,7 @@ export class PlayerData implements InMemoryDbService {
             {
                 'id': 15,
                 "playerName": "De Siglio",
-                "playerPosition": "LB",
+                "playerPosition": "Defender",
                 "playerAge": 24,
                 "playerNation": "Italy",
                 "playerClub": "Juve",
@@ -155,7 +155,7 @@ export class PlayerData implements InMemoryDbService {
             {
                 'id': 16,
                 "playerName": "Marcelo",
-                "playerPosition": "LB",
+                "playerPosition": "Defender",
                 "playerAge": 27,
                 "playerNation": "Brazil",
                 "playerClub": "R Madrid",

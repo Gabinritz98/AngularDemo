@@ -34,13 +34,22 @@ export class PlayerService {
       .catch(this.handleError);
     }
 
-    updateSelectedPlayers(selectedPlayers: IPlayer[]): Observable <IPlayer[]> {
+    removeSelectedPlayer(player_id: number) {
+      return this._http.delete('api/selectedPlayers/' + player_id);
+    }
+
+    removePlayer(player_id: number) {
+      return this._http.delete('api/players/'+ player_id);
+    }
+
+    /*updateSelectedPlayers(selectedPlayers: IPlayer[]): Observable <IPlayer[]> {
       const url= `${this._selectedPlayersUrl}`;
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
-
+      let body = JSON.stringify(selectedPlayers);
+      
       return this._http.put(url, selectedPlayers, options)
-      .map(this.extractData)
+      .map((res: Response) => res.json())
       .do(data => console.log('updateSelectedPlayers ' + JSON.stringify(data)))
       .catch(this.handleError);
     }
@@ -49,21 +58,32 @@ export class PlayerService {
       const url= `${this._availablePlayersUrl}`;
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
+      let body = JSON.stringify(players);
 
-      return this._http.put(url, players, options)
-      .map(this.extractData)
+      return this._http.put(url, players, options).map((res: Response) => res.json())
       .do(data => console.log('updatePlayers ' + JSON.stringify(data)))
       .catch(this.handleError);
     }
-
+*/
     addPlayer(player : IPlayer): Observable <IPlayer> {
       const url= `${this._availablePlayersUrl}`;
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
+      let body = JSON.stringify(player);
 
-      return this._http.post(url, player, options)
-      .map(this.extractData)
-      .do(data => console.log('player added to avaiblePlayers: ' + JSON.stringify(data)))
+      return this._http.post(url, body, options).map((res: Response) => res.json())
+      .do(data => console.log('currentSelectedPlayers after remove : ' + JSON.stringify(data)))
+      .catch(this.handleError);
+    }
+
+    addSelectedPlayer(player : IPlayer): Observable <IPlayer> {
+      const url= `${this._selectedPlayersUrl}`;
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+      let body = JSON.stringify(player);
+
+      return this._http.post(url, body, options).map((res: Response) => res.json())
+      .do(data => console.log('currentSelectedPlayers after remove : ' + JSON.stringify(data)))
       .catch(this.handleError);
     }
 

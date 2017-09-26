@@ -1,11 +1,61 @@
 <button type="button" (click)='onAddPlayer()'>Add a Player</button>
+<h2>Goalkeepers :</h2>
 <ul>
-    <li *ngFor='let player of selectedPlayers, let i = index'>
-        {{player.playerName}}, 
-        {{player.playerPosition}}, 
-        {{player.playerAge}}, 
-        {{player.playerNation}}, 
-        {{player.playerClub}}
-        <button (click)='onRemoveThisPlayer(player, i)'>Remove this player!</button>
-    </li>
+    <div *ngFor='let player of selectedPlayers, let i = index'>
+        <div *ngIf='player.playerPosition==="Goalkeeper"'>
+            <li>
+                {{player.playerName}}, 
+                {{player.playerPosition}}, 
+                {{player.playerAge}}, 
+                {{player.playerNation}}, 
+                {{player.playerClub}}
+                <button (click)='onRemoveThisPlayer(player, i)'>Remove this player!</button>
+            </li>
+        </div>
+    </div>
+</ul>
+<h2>Defenders :</h2>
+<ul>
+        <div *ngFor='let player of selectedPlayers, let i = index'>
+                <div *ngIf='player.playerPosition==="Defender"'>
+                        <li>
+                            {{player.playerName}}, 
+                            {{player.playerPosition}}, 
+                            {{player.playerAge}}, 
+                            {{player.playerNation}}, 
+                            {{player.playerClub}}
+                            <button (click)='onRemoveThisPlayer(player, i)'>Remove this player!</button>
+                        </li>
+                    </div>
+                </div>
+</ul>
+<h2>Midfielders :</h2>
+<ul>
+        <div *ngFor='let player of selectedPlayers, let i = index'>
+                <div *ngIf='player.playerPosition==="Midfielder"'>
+                        <li>
+                            {{player.playerName}}, 
+                            {{player.playerPosition}}, 
+                            {{player.playerAge}}, 
+                            {{player.playerNation}}, 
+                            {{player.playerClub}}
+                            <button (click)='onRemoveThisPlayer(player, i)'>Remove this player!</button>
+                        </li>
+                    </div>
+                </div>
+</ul>
+<h2>Strikers :</h2>
+<ul>
+        <div *ngFor='let player of selectedPlayers, let i = index'>    
+    <div *ngIf='player.playerPosition==="Striker"'>
+                <li>
+                    {{player.playerName}}, 
+                    {{player.playerPosition}}, 
+                    {{player.playerAge}}, 
+                    {{player.playerNation}}, 
+                    {{player.playerClub}}
+                    <button (click)='onRemoveThisPlayer(player, i)'>Remove this player!</button>
+                </li>
+            </div>
+        </div>
 </ul>

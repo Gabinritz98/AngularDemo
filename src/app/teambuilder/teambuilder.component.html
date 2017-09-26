@@ -1,11 +1,11 @@
 <button type="button" (click)='onAddPlayer()'>Add a Player</button>
 <ul>
-    <li *ngFor='let player of selectedPlayers'>
+    <li *ngFor='let player of selectedPlayers, let i = index'>
         {{player.playerName}}, 
         {{player.playerPosition}}, 
         {{player.playerAge}}, 
         {{player.playerNation}}, 
-        {{player.playerClub}},
+        {{player.playerClub}}
         <button (click)='onRemoveThisPlayer(player, i)'>Remove this player!</button>
     </li>
 </ul>

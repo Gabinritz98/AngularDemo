@@ -14,7 +14,7 @@ import 'rxjs/add/operator/map';
 
 export class PlayerService {
 
-    private _avaiblePlayersUrl = 'api/players';
+    private _availablePlayersUrl = 'api/players';
     private _selectedPlayersUrl = 'api/selectedPlayers';
     constructor(private _http: Http) {}
 
@@ -27,16 +27,51 @@ export class PlayerService {
     }
 
     getPlayers(): Observable <IPlayer[]> {
-      const url= `${this._avaiblePlayersUrl}`;
+      const url= `${this._availablePlayersUrl}`;
       return this._http.get(url)
       .map(this.extractData)
       .do(data => console.log('getAvaiblePlayers: ' + JSON.stringify(data)))
       .catch(this.handleError);
     }
+
+    updateSelectedPlayers(selectedPlayers: IPlayer[]): Observable <IPlayer[]> {
+      const url= `${this._selectedPlayersUrl}`;
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+
+      return this._http.put(url, selectedPlayers, options)
+      .map(this.extractData)
+      .do(data => console.log('updateSelectedPlayers ' + JSON.stringify(data)))
+      .catch(this.handleError);
+    }
+
+    updatePlayers(players: IPlayer[]): Observable <IPlayer[]> {
+      const url= `${this._availablePlayersUrl}`;
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+
+      return this._http.put(url, players, options)
+      .map(this.extractData)
+      .do(data => console.log('updatePlayers ' + JSON.stringify(data)))
+      .catch(this.handleError);
+    }
+
+    addPlayer(player : IPlayer): Observable <IPlayer> {
+      const url= `${this._availablePlayersUrl}`;
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+
+      return this._http.post(url, player, options)
+      .map(this.extractData)
+      .do(data => console.log('player added to avaiblePlayers: ' + JSON.stringify(data)))
+      .catch(this.handleError);
+    }
+
     private handleError(error: any): Promise<any> {
       console.error('An error occurred', error); // for demo purposes only
       return Promise.reject(error.message || error);
     }
+
     private extractData(response: Response) {
       let body = response.json();
       return body.data || {};

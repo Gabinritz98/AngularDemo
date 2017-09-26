@@ -24,5 +24,8 @@ export class TeamBuilderComponent {
     onAddPlayer(): void {
         this._router.navigate(['/addplayer']);
     }
-    onRemoveThisPlayer(): void {}
+    onRemoveThisPlayer(player: IPlayer, index: number): void {
+        this.selectedPlayers.splice(index, 1);
+        this._playerService.addPlayer(player);
+    }
 }

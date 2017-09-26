@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http'
 
 import { AppComponent } from './app.component';
 import { TeamBuilderComponent } from './teambuilder/teambuilder.component';
@@ -10,6 +11,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { SaveComponent } from './save/save.component';
 import { AddPlayerComponent} from './addplayer/addplayer.component';
  
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { PlayerData } from './shared/player-data';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +25,9 @@ import { AddPlayerComponent} from './addplayer/addplayer.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    HttpModule,
+    InMemoryWebApiModule.forRoot(PlayerData),
     RouterModule.forRoot([
       { path : 'teambuilder', component : TeamBuilderComponent },
       { path : 'composition', component : CompositionComponent },

@@ -6,9 +6,10 @@ import { IPlayer } from '../addplayer/player';
 export class MovePlayerService {
 
     getThisPlayer(): IPlayer {
+        
         return
     }
-    benchThisPlayer(): IPlayer {
-        return
+    benchThisPlayer()  {
+        
     }
 }

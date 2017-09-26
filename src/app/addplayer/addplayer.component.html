@@ -1,12 +1,13 @@
 <div>
     <button type='button' (click)='onTeamView()'>Team View</button>
     <ul>
-        <li *ngFor='let player of players'>{{player.playerName}}, 
+        <li *ngFor='let player of players, let i = index'>
+            {{player.playerName}}, 
             {{player.playerPosition}}, 
             {{player.playerAge}}, 
             {{player.playerNation}}, 
             {{player.playerClub}}
-            <button (click)='onGetThisPlayer(player)'>Get this player!</button>
+            <button (click)='onGetThisPlayer(player, i)'>Get this player!</button>
         </li>
     </ul>
 </div>

@@ -1,0 +1,61 @@
+<h1>Team Composition</h1>
+<h3>Chosen Formation : <select name="formation" id="formation">
+    <option>4-4-2</option>
+    <option>4-2-3-1</option>
+    <option>4-3-3</option>    
+</select></h3>
+<div class="footballPitch">
+    <div id="spotGK">
+        <div class="image"></div>
+        <div class="player">Goalkeeper</div>
+    </div>
+    <div id="spotDD">
+        <div class="image"></div>
+        <div class="player">Right Defender</div>
+    </div>
+    <div id="spotDCD">
+        <div class="image"></div>
+        <div class="player">Central Defender</div>
+    </div>
+    <div id="spotDCG">
+        <div class="image"></div>
+        <div class="player">Central Defender</div>
+    </div>
+    <div id="spotDG">
+        <div class="image"></div>
+        <div class="player">Left Defender</div>
+    </div>
+    <div id="spotMD">
+        <div class="image"></div>
+        <div class="player">Right Midfielder</div>
+    </div>
+    <div id="spotMCD">
+        <div class="image"></div>
+        <div class="player">Central Midfielder</div>
+    </div>
+        <div id="spotMCG">
+        <div class="image"></div>
+        <div class="player">Central Midfielder</div>
+    </div>
+    <div id="spotMG">
+        <div class="image"></div>
+        <div class="player">Left Midfielder</div>
+    </div>
+    <div id="spotATD">
+        <div class="image"></div>
+        <div class="player">Striker</div>
+    </div>
+    <div id="spotATG">
+        <div class="image"></div>
+        <div class="player">Striker</div>
+    </div>
+</div>
+<ul>
+    <li *ngFor='let player of players'>
+            {{player.playerName}}, 
+            {{player.playerPosition}}, 
+            {{player.playerAge}}, 
+            {{player.playerNation}}, 
+            {{player.playerClub}}
+    </li>
+</ul>

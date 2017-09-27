@@ -9,7 +9,7 @@ export class PlayerData implements InMemoryDbService {
         let selectedPlayers: IPlayer[] = [{
             'id': 1,
             "playerName": "Jean claude",
-            "playerPosition": "",
+            "playerPosition": "Defender",
             "playerAge": 23,
             "playerNation": "France",
             "playerClub": "Barcelona",

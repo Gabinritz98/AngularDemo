@@ -3,16 +3,32 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { PlayerService } from './player.service';
 import { IPlayer } from './player';
 import { Observable } from "rxjs/Rx";
+import { FormsModule } from '@angular/forms';
 
-@Component ({
+@Component ({ 
     templateUrl: './addplayer.component.html',
     styleUrls: ['./addplayer.component.css']
 })
 
 export class AddPlayerComponent {
 
-    players: IPlayer[] = []; 
+    players: IPlayer[] = [];
+    inputPlayerName: string;
+    inputPlayerPosition: string;
+    inputPlayerAge: number;
+    inputPlayerNation: string;
+    inputPlayerClub: string;
+    inputPlayerImageUrl: string;
     errorMessage: string;
+    inputPlayer: IPlayer ={
+        'id': null,
+        "playerName": "",
+        "playerPosition": "",
+        "playerAge": null,
+        "playerNation": "",
+        "playerClub": "",
+        "playerImage": ""
+    };
 
     constructor(private _playerService: PlayerService, private _router : Router) {}
 
@@ -24,6 +40,27 @@ export class AddPlayerComponent {
     onTeamView(): void {
         this._router.navigate(['/teambuilder']);
     }
+    onAdd(playerName: string, playerPosition: string, playerAge: number, playerNation: string, playerClub: string, playerID: number): void {
+        Object.defineProperties(this.inputPlayer, {
+            'playerName': {value: playerName},
+            'playerPosition':{value: playerPosition},
+            'playerAge' : {value: playerAge},
+            'playerNation' : {value : playerNation},
+            'playerClub' : {value : playerClub}
+        });
+    this._playerService.addPlayer(this.inputPlayer).subscribe(
+        data => {
+          // refresh the list
+          this._playerService.getPlayers();
+          return true;
+        },
+        error => {
+          console.error("error adding user player");
+          return Observable.throw(error);
+        }
+     );
+    this.players.push(this.inputPlayer);
+    }
     onGetThisPlayer(player: IPlayer, index: number){
         this.players.splice(index, 1);
         console.log(player);
@@ -34,7 +71,7 @@ export class AddPlayerComponent {
               return true;
             },
             error => {
-              console.error("Error saving food!");
+              console.error("Error  removing player from the list!");
               return Observable.throw(error);
             }
          );
@@ -46,7 +83,7 @@ export class AddPlayerComponent {
               return true;
             },
             error => {
-                console.error("Error saving players!");
+                console.error("Error adding player to the list");
                 return Observable.throw(error);
               }
          );

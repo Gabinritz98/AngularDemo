@@ -1,0 +1,74 @@
+.footballPitch {
+    background-image: url('./terrain.jpg');
+    background-size: 100% auto;
+    width: 1000px;
+    height: 750px;
+    position: relative;
+}
+.image {
+    background-image: url('./blackhead.jpg');
+    background-size: 100% auto;
+    width: 75px;
+    height: 50px;
+}
+.player {
+    word-wrap: normal;
+    text-align: center;
+    width: 70px;
+    color: blue;
+}
+#spotGK {
+    position: absolute;
+    left: 50px;
+    top: 350px;
+}
+#spotDD {
+    position: absolute;
+    left: 225px;
+    top: 600px;
+}
+#spotDCD {
+    position: absolute;
+    left : 200px;
+    top: 450px;
+}
+#spotDCG {
+    position: absolute;
+    left: 200px;
+    top: 240px;
+}
+#spotDG {
+    position: absolute;
+    left: 225px;
+    top: 75px;
+}
+#spotMD {
+    position: absolute;
+    left: 600px;
+    top: 565px;
+}
+#spotMCD {
+    position: absolute;
+    left: 450px;
+    top: 425px;
+}
+#spotMCG {
+    position: absolute;
+    left: 450px;
+    top: 265px;
+}
+#spotMG {
+    position: absolute;
+    left: 600px;
+    top: 110px;
+}
+#spotATD {
+    position: absolute;
+    left: 775px;
+    top: 445px;
+}
+#spotATG {
+    position: absolute;
+    left: 775px;
+    top: 220px;
+}

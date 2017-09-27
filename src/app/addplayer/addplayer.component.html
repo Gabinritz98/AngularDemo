@@ -1,13 +1,76 @@
-<div>
-    <button type='button' (click)='onTeamView()'>Team View</button>
-    <ul>
-        <li *ngFor='let player of players, let i = index'>
-            {{player.playerName}}, 
-            {{player.playerPosition}}, 
-            {{player.playerAge}}, 
-            {{player.playerNation}}, 
-            {{player.playerClub}}
-            <button (click)='onGetThisPlayer(player, i)'>Get this player!</button>
-        </li>
-    </ul>
-</div>
+<button type='button' (click)='onTeamView()'>Team View</button>
+<h1>Available Players :</h1>
+<h2>Goalkeepers :</h2>
+<ul>
+    <div *ngFor='let player of players, let i = index'>
+        <div *ngIf='player.playerPosition==="Goalkeeper"'>
+            <li>
+                {{player.playerName}}, 
+                {{player.playerPosition}}, 
+                {{player.playerAge}}, 
+                {{player.playerNation}}, 
+                {{player.playerClub}}
+                <button (click)='onGetThisPlayer(player, i)'>Get this player!</button>
+            </li>
+        </div>
+    </div>
+</ul>
+<h2>Defenders :</h2>
+<ul>
+    <div *ngFor='let player of players, let i = index'>
+        <div *ngIf='player.playerPosition==="Defender"'>
+            <li>
+                {{player.playerName}}, 
+                {{player.playerPosition}}, 
+                {{player.playerAge}}, 
+                {{player.playerNation}}, 
+                {{player.playerClub}}
+                <button (click)='onGetThisPlayer(player, i)'>Get this player!</button>
+            </li>
+        </div>
+    </div>
+</ul>
+<h2>Midfielders :</h2>
+<ul>
+    <div *ngFor='let player of players, let i = index'>
+        <div *ngIf='player.playerPosition==="Midfielder"'>
+            <li>
+                {{player.playerName}}, 
+                {{player.playerPosition}}, 
+                {{player.playerAge}}, 
+                {{player.playerNation}}, 
+                {{player.playerClub}}
+                <button (click)='onGetThisPlayer(player, i)'>Get this player!</button>
+            </li>
+        </div>
+    </div>
+</ul>
+<h2>Strikers :</h2>
+<ul>
+    <div *ngFor='let player of players, let i = index'>    
+        <div *ngIf='player.playerPosition==="Striker"'>
+            <li>
+                {{player.playerName}}, 
+                {{player.playerPosition}}, 
+                {{player.playerAge}}, 
+                {{player.playerNation}}, 
+                {{player.playerClub}}
+                <button (click)='onGetThisPlayer(player, i)'>Get this player!</button>
+            </li>
+        </div>
+    </div>
+</ul>
+<h2>Add a non-existing player :</h2>
+<form>
+    <input placeholder="Player Name" type="text" [(ngModel)]="inputPlayerName" [ngModelOptions]="{standalone: true}"/>
+    <select [(ngModel)]="inputPlayerPosition" [ngModelOptions]="{standalone: true}">
+        <option value="Goalkeeper">Goalkeeper</option>
+        <option value="Defender">Defender</option>
+        <option value="Midfielder">Midfielder</option>
+        <option value="Striker">Striker</option>
+    </select>
+    <input placeholder="Player Age" type="number" min="0" [(ngModel)]="inputPlayerAge" [ngModelOptions]="{standalone: true}"/>
+    <input placeholder="Player Nation" type="text" [(ngModel)]="inputPlayerNation" [ngModelOptions]="{standalone: true}"/>
+    <input placeholder="Player Club" type="text" [(ngModel)]="inputPlayerClub" [ngModelOptions]="{standalone: true}"/>
+    <button (click)="onAdd(inputPlayerName, inputPlayerPosition, inputPlayerAge, inputPlayerNation, inputPlayerClub)" type="reset" value="Reset">Add</button>
+</form>

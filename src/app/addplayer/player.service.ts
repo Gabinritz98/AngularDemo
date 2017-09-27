@@ -22,7 +22,7 @@ export class PlayerService {
       const url= `${this._selectedPlayersUrl}`;
       return this._http.get(url)
       .map(this.extractData)
-      .do(data => console.log('getSelectedPlayers ' + JSON.stringify(data)))
+      //.do(data => console.log('getSelectedPlayers ' + JSON.stringify(data)))
       .catch(this.handleError);
     }
 
@@ -30,7 +30,7 @@ export class PlayerService {
       const url= `${this._availablePlayersUrl}`;
       return this._http.get(url)
       .map(this.extractData)
-      .do(data => console.log('getAvaiblePlayers: ' + JSON.stringify(data)))
+      //.do(data => console.log('getAvaiblePlayers: ' + JSON.stringify(data)))
       .catch(this.handleError);
     }
 
@@ -72,7 +72,7 @@ export class PlayerService {
       let body = JSON.stringify(player);
 
       return this._http.post(url, body, options).map((res: Response) => res.json())
-      .do(data => console.log('currentSelectedPlayers after remove : ' + JSON.stringify(data)))
+      //.do(data => console.log('currentAvailablePlayers : ' + JSON.stringify(data)))
       .catch(this.handleError);
     }
 
@@ -83,7 +83,7 @@ export class PlayerService {
       let body = JSON.stringify(player);
 
       return this._http.post(url, body, options).map((res: Response) => res.json())
-      .do(data => console.log('currentSelectedPlayers after remove : ' + JSON.stringify(data)))
+      //.do(data => console.log('currentSelectedPlayers after remove : ' + JSON.stringify(data)))
       .catch(this.handleError);
     }
 

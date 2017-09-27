@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http'
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TeamBuilderComponent } from './teambuilder/teambuilder.component';
@@ -25,6 +26,7 @@ import { PlayerData } from './shared/player-data';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(PlayerData),

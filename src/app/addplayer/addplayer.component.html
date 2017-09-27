@@ -1,65 +1,75 @@
 <button type='button' (click)='onTeamView()'>Team View</button>
 <h1>Available Players :</h1>
+<div id="playerList">
+    <div class="playerType">
 <h2>Goalkeepers :</h2>
 <ul>
     <div *ngFor='let player of players, let i = index'>
         <div *ngIf='player.playerPosition==="Goalkeeper"'>
-            <li>
+            <li class="list">
                 {{player.playerName}}, 
                 {{player.playerPosition}}, 
                 {{player.playerAge}}, 
                 {{player.playerNation}}, 
                 {{player.playerClub}}
-                <button (click)='onGetThisPlayer(player, i)'>Get this player!</button>
+                <button (click)='onGetThisPlayer(player, i)' class="button">Get this player!</button>
             </li>
         </div>
     </div>
 </ul>
+    </div>
+    <div class="playerType"> 
 <h2>Defenders :</h2>
 <ul>
     <div *ngFor='let player of players, let i = index'>
         <div *ngIf='player.playerPosition==="Defender"'>
-            <li>
+            <li class="list">
                 {{player.playerName}}, 
                 {{player.playerPosition}}, 
                 {{player.playerAge}}, 
                 {{player.playerNation}}, 
                 {{player.playerClub}}
-                <button (click)='onGetThisPlayer(player, i)'>Get this player!</button>
+                <button (click)='onGetThisPlayer(player, i)' class="button">Get this player!</button>
             </li>
         </div>
     </div>
 </ul>
+    </div>
+    <div class="playerType">
 <h2>Midfielders :</h2>
 <ul>
     <div *ngFor='let player of players, let i = index'>
         <div *ngIf='player.playerPosition==="Midfielder"'>
-            <li>
+            <li class="list">
                 {{player.playerName}}, 
                 {{player.playerPosition}}, 
                 {{player.playerAge}}, 
                 {{player.playerNation}}, 
                 {{player.playerClub}}
-                <button (click)='onGetThisPlayer(player, i)'>Get this player!</button>
+                <button (click)='onGetThisPlayer(player, i)' class="button">Get this player!</button>
             </li>
         </div>
     </div>
 </ul>
+    </div>
+    <div class="playerType">
 <h2>Strikers :</h2>
 <ul>
     <div *ngFor='let player of players, let i = index'>    
         <div *ngIf='player.playerPosition==="Striker"'>
-            <li>
+            <li class="list">
                 {{player.playerName}}, 
                 {{player.playerPosition}}, 
                 {{player.playerAge}}, 
                 {{player.playerNation}}, 
                 {{player.playerClub}}
-                <button (click)='onGetThisPlayer(player, i)'>Get this player!</button>
+                <button (click)='onGetThisPlayer(player, i)' class="button">Get this player!</button>
             </li>
         </div>
     </div>
 </ul>
+    </div>
+</div>
 <h2>Add a non-existing player :</h2>
 <form>
     <input placeholder="Player Name" type="text" [(ngModel)]="inputPlayerName" [ngModelOptions]="{standalone: true}"/>

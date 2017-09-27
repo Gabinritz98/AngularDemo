@@ -1,3 +1,44 @@
+#conteneur {
+    display: flex;
+    justify-content: space-between;
+}
+.list {
+    border-radius: 5px;
+    background-color: white;
+    min-height: 25px;
+    min-width: 100px;
+    margin: 5px;
+    padding: 3px;
+    text-align: left;
+    color: #C86410;
+}
+#playerList {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #0F064D;
+    min-height: 500px;
+}
+#ligneA {
+    display: flex;
+    justify-content: space-around;
+    width: 1000px;
+    min-height: 400px;
+}
+#ligneB {
+    display: flex;
+    justify-content: space-around;
+    min-height: 400px;
+    width: 1000px;
+}
+.playerType {
+    background-color: #C86410;
+    color: white;
+    border-radius: 10px;
+    margin: 50px;
+    text-align: center;
+    min-width: 400px;
+}
 .footballPitch {
     background-image: url('./terrain.jpg');
     background-size: 100% auto;
@@ -10,6 +51,7 @@
     background-size: 100% auto;
     width: 75px;
     height: 50px;
+    border-radius: 5px;
 }
 .player {
     word-wrap: normal;
